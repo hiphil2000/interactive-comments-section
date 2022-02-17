@@ -5,6 +5,7 @@ export default class CustomDocument extends Document {
 		return (
 			<Html>
 				<Head>
+					{/** Favicons */}
 					<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
 					<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
 					<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
@@ -22,6 +23,13 @@ export default class CustomDocument extends Document {
 					<meta name="msapplication-TileColor" content="#ffffff" />
 					<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 					<meta name="theme-color" content="#ffffff" />
+
+					{/** Fonts */}
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;700&family=Roboto:wght@100;300;500;700&display=swap"
+						rel="stylesheet" />
 				</Head>
 				<body>
 				<Main />

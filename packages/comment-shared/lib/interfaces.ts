@@ -9,14 +9,14 @@ export interface IComment {
 	commentId: string;
 	author: IUser;
 	content: string;
-	createAt: Date;
-	updateAt?: Date | null;
-	deleteAt?: Date | null;
+	createAt: string;
+	updateAt?: string | null;
+	deleteAt?: string | null;
 	vote: number;
 }
 
 export interface ICommonResponse<T> {
-	responseAt: Date;
+	responseAt: string;
 	data: T | null;
 	message?: string | null;
 }

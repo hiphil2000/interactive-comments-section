@@ -18,7 +18,8 @@
     "jsx": "preserve",
     "incremental": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "jsxImportSource": "@emotion/react"
   },
   "include": [
     "next-env.d.ts",

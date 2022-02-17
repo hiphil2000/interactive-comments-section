@@ -3,7 +3,6 @@ import { getComments } from "../services/commentService";
 import { IComment, ICommonResponse } from "@hiphil2000/comment-shared";
 
 export const commentsRouter = require("express-async-router").AsyncRouter();
-commentsRouter.contentType =
 
 /**
  * [GET] "/"
@@ -14,7 +13,7 @@ commentsRouter.get("/", async (req: Request, res: Response) => {
 
     res.contentType("application/json");
     res.send({
-        responseAt: new Date(),
+        responseAt: new Date().toString(),
         data: comments
     } as ICommonResponse<IComment[]>);
 });

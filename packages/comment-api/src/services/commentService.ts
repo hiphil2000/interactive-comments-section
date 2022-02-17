@@ -7,32 +7,32 @@ const tempComments: IComment[] = [
 		commentId: "com1",
 		author: tempUsers[0],
 		content: "comasdfasdf",
-		createAt: new Date("2022-02-17 13:03:00"),
-		vote: 3
+		createAt: "2022-01-17 13:03:00",
+		vote: 3,
 	},
 	{
 		commentId: "com2",
 		author: tempUsers[1],
 		content: "comasdfasdf21313123",
-		createAt: new Date("2022-02-17 13:03:00"),
-		vote: 3
+		createAt: "2022-02-17 13:03:00",
+		vote: 3,
 	},
 	{
 		parentId: "com2",
 		commentId: "com2-1",
 		author: tempUsers[2],
 		content: "comasdfasdf22222",
-		createAt: new Date("2022-02-17 13:03:00"),
-		vote: 3
+		createAt: "2022-02-17 15:03:00",
+		vote: 3,
 	},
 	{
 		commentId: "com3",
 		author: tempUsers[3],
 		content: "comasdfasdfaasdf",
-		createAt: new Date("2022-02-17 13:03:00"),
-		vote: 3
+		createAt: "2021-02-17 13:03:00",
+		vote: 3,
 	},
-]
+];
 
 /**
  * Gets available comments
@@ -41,5 +41,16 @@ const tempComments: IComment[] = [
  */
 export async function getComments(): Promise<IComment[]> {
 	await sleep(500);
-	return tempComments;
+	return tempComments.sort((a, b) => {
+		const aDate = new Date(a.createAt);
+		const bDate = new Date(b.createAt);
+
+		if (aDate < bDate) {
+			return -1;
+		} else if (aDate === bDate) {
+			return 0
+		} else {
+			return 1;
+		}
+	});
 }
