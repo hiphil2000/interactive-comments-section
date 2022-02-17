@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
-import {homeRouter} from "./routes";
+import {commentsRouter} from "./routes";
 
 // prepare configurations
 const port = parseInt(process.env.PORT || "", 10) || 5000;
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(morgan(isDev ? "dev" : "combined"));
 
 // configure routes
-app.use("/", homeRouter);
+app.use("/comments", commentsRouter);
 
 // start listen port
 app.listen(port);
