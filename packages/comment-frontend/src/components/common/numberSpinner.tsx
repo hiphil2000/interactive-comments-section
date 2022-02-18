@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Button from "./button";
-import { Minus as MinusIcon, Plus as PlusIcon } from "./icons";
+import { Minus as MinusIcon, Plus as PlusIcon } from "../icons";
 
 interface INumberSpinnerProps {
 	value: number;
@@ -16,6 +16,7 @@ const ButtonRoot = styled("div")`
   border-radius: 8px;
   background-color: #f5f6fa;
   overflow: hidden;
+  user-select: none;
 `;
 
 const VoteButtonItem = styled(Button)`

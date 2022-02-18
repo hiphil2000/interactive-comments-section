@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
-import { BreakpointType, IBreakpoints } from "../libs/breakpoint";
+import { Breakpoints, BreakpointType } from "../../libs/theme";
 
 interface IAvatarProps {
 	src: string;
@@ -8,7 +8,7 @@ interface IAvatarProps {
 	size?: BreakpointType;
 }
 
-const avatarBreakpoints: IBreakpoints = {
+const avatarBreakpoints: Breakpoints = {
 	xs: 24,
 	sm: 28,
 	md: 32,

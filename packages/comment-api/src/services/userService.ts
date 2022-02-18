@@ -14,8 +14,8 @@ export const tempUsers: IUser[] = [
 	},
 	{
 		userId: "68bc22f7-09df-42cb-bdb3-c58e2c05434d",
-		userName: "maxbalgun",
-		avatar: "/images/avatars/image-maxbalgun.webp",
+		userName: "maxblagun",
+		avatar: "/images/avatars/image-maxblagun.webp",
 	},
 	{
 		userId: "c0b33ad6-d0a9-4d9d-a046-c2408547ef72",

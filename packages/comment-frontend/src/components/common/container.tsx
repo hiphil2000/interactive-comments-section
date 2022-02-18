@@ -1,6 +1,6 @@
 import React from "react";
-import { css } from "@emotion/react";
-import { breakpoints, BreakpointType } from "../libs/breakpoint";
+import { css, useTheme } from "@emotion/react";
+import { BreakpointType } from "../../libs/theme";
 
 interface IContainerProps {
 	children?: React.ReactNode;
@@ -11,9 +11,10 @@ export default function Container({
 	children,
 	maxWidth = "md",
 }: IContainerProps) {
+	const theme = useTheme();
 	const styles = {
 		root: css`
-          max-width: ${breakpoints[maxWidth]}px;
+          max-width: ${theme.breakpoints[maxWidth]}px;
 		  margin: 0 auto;
 		`,
 	};

@@ -1,8 +1,10 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import CssReset from "../src/components/cssReset";
+import CssReset from "../src/components/common/cssReset";
 import { SWRConfig } from "swr";
 import Axios from "axios";
+import { ThemeProvider } from "@emotion/react";
+import { defaultTheme } from "../src/libs/theme";
 
 interface ICustomAppProps extends AppProps {
 }
@@ -19,12 +21,19 @@ export default function CustomApp({
 	return (
 		<SWRConfig value={{
 			fetcher: defaultFetcher,
+			fallback: {
+				"/api/user/me": {
+					"test": "test",
+				},
+			},
 		}}>
-			<Head>
-				<title>interactive-comments</title>
-			</Head>
-			<CssReset />
-			<Component {...pageProps} />
+			<ThemeProvider theme={defaultTheme}>
+				<Head>
+					<title>interactive-comments</title>
+				</Head>
+				<CssReset />
+				<Component {...pageProps} />
+			</ThemeProvider>
 		</SWRConfig>
 	);
 }
